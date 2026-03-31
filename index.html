@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fusion Genesis</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* BODY */
+        body {
+            min-height: 100dvh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 18vh; /* 🔥 estable (no se mueve con barra) */
+            background: url('https://i.imgur.com/fTOE7pn.png') center/cover no-repeat;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* OVERLAY */
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.8));
+            z-index: 0;
+        }
+
+        /* CONTENIDO */
+        .contenido {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+            max-width: 900px;
+            padding: 30px;
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.15);
+            /* centrado visual */
+            left: -2%;
+            animation: fadeUp 1s ease;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .contenido {
+            position: relative;
+            top: 10vh; /* 🔥 lo baja */
+            left: -0.5%; /* deja tu ajuste horizontal */
+        }
+
+            .contenido:hover {
+                transform: scale(1.02);
+                box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            }
+
+        /* LOGO */
+        .logo {
+            width: 650px; /* 🔥 mejor proporción */
+            max-width: 95%;
+            height: auto;
+            margin-bottom: -10px;
+            filter: drop-shadow(0 0 10px rgba(255,215,0,0.2));
+        }
+
+        /* TEXTO */
+        p {
+            font-size: 16px;
+            color: #ddd;
+            margin-bottom: 20px;
+            position: relative;
+            top: 20px;
+        }
+
+        /* BOTÓN */
+        .boton {
+            margin-top: 20px;
+            background: linear-gradient(45deg, #ff6a00, #97692a);
+            padding: 12px 30px;
+            color: white;
+            font-size: 16px;
+            border-radius: 30px;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+            /* EFECTO FRANJA */
+            .boton::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 50%;
+                height: 100%;
+                background: rgba(255,255,255,0.25);
+                transform: skewX(-20deg);
+                transition: 0.5s;
+            }
+
+            .boton:hover::after {
+                left: 120%;
+            }
+
+        /* BOTONES FLOTANTES */
+        .whatsapp, .instagram {
+            position: fixed;
+            bottom: 20px;
+            background: white;
+            padding: 12px;
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+            z-index: 1000;
+            transition: 0.3s;
+        }
+
+        .whatsapp {
+            right: 20px;
+        }
+
+        .instagram {
+            right: 80px;
+        }
+
+        .whatsapp:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 25px rgba(37,211,102,0.8);
+        }
+
+        .instagram:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 25px rgb(188,59,203);
+        }
+
+        /* ANIMACIÓN */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 📱 CELULAR */
+        @media (max-width: 768px) {
+
+            body {
+                padding-top: 12vh;
+                background: url('https://i.imgur.com/hoXfnP6.png') center/cover no-repeat;
+            }
+
+            .contenido {
+                left: 0;
+                max-width: 95%;
+                padding: 25px;
+            }
+
+            .logo {
+                width: 260px;
+            }
+
+            p {
+                font-size: 14px;
+                top: -5px;
+            }
+
+            .boton {
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+
+            .instagram {
+                right: 15px;
+                bottom: 80px;
+            }
+
+            .whatsapp {
+                right: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="https://wa.me/+528716127564" class="whatsapp" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="30">
+    </a>
+
+    <a href="https://www.instagram.com/fusion_genesis_shop/" class="instagram" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1280px-Instagram_icon.png" width="30">
+    </a>
+
+    <div class="overlay"></div>
+
+    <div class="contenido">
+        <img src="https://i.imgur.com/3aei0jT.png" class="logo">
+        <p>La Mejor Calidad En Gorras Y Playeras A Un Precio Unico.</p>
+        <a href="catalogo.html" class="boton">Ver Catálogo</a>
+    </div>
+
+</body>
+</html>
